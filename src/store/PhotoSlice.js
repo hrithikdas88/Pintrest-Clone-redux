@@ -3,7 +3,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 export const fetchPhotos = createAsyncThunk('photos/fetchPhotos', async () => {
   const response = await fetch('https://api.pexels.com/v1/curated?page=2&per_page=40', {
     headers: {
-      Authorization: 'z7WLXSZGpoTzrzcOctxFmJVdTHxdG8dbpO98Oz5XIdwAPFykjDADHNl0', // Replace with your actual API key
+      Authorization: 'z7WLXSZGpoTzrzcOctxFmJVdTHxdG8dbpO98Oz5XIdwAPFykjDADHNl0', 
     },
   });
 

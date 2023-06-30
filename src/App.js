@@ -1,16 +1,30 @@
+import "./App.css";
+import RootLayout from "./pages/RootLayout";
+import PhotoGallery from "./components/photoGallery";
+import Favorites from "./components/Favorites/Favorites";
 
-import './App.css';
-import store from './store/Store';
-import { Provider } from 'react-redux';
-import PhotoGallery from './components/photoGallery';
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  RouterProvider,
+ 
+} from "react-router-dom";
 
 
 function App() {
+
+  const router = createBrowserRouter(createRoutesFromElements(
+    <Route path="/" element={<RootLayout/>}>
+      <Route index element={<PhotoGallery/>}></Route>
+      <Route path="/favorite" element={<Favorites/>}></Route>
+    </Route>
+  ))
+
+
   return (
     <div className="App">
-      <Provider store={store}>
-    <PhotoGallery/>
-    </Provider>
+     <RouterProvider router={router}/>
     </div>
   );
 }
