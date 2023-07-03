@@ -1,13 +1,14 @@
 import { configureStore  } from "@reduxjs/toolkit";
 import photoReducer from '../store/PhotoSlice';
-import favReducer from "../store/FavoriteSlice"
-
+import FavoriteSlice from "./FavoriteSlice";
+import ClickSlice from "./ClickSlice";
 
 
 const store=configureStore({
     reducer:{
       photos:photoReducer,
-      favorite:favReducer
+      favorite:FavoriteSlice,
+      click:ClickSlice
     }
 })
 

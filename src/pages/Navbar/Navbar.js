@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.scss";
 import {  useSelector } from "react-redux/es/hooks/useSelector";
+import {AiFillHeart} from 'react-icons/ai'
 
 const Navbar = () => {
   const favorites = useSelector(state =>state.favorite)
